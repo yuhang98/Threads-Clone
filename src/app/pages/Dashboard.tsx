@@ -1,12 +1,20 @@
-'use client';
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
+import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
+import EditCalendarIcon from '@mui/icons-material/EditCalendar';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import DragHandleOutlinedIcon from '@mui/icons-material/DragHandleOutlined';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Stack,
+} from '@mui/material';
 
 export const Dashboard = () => {
   return (
@@ -22,16 +30,34 @@ export const Dashboard = () => {
             aria-label="menu"
             sx={{ mr: 2, color: 'black' }}
           >
-            <MenuIcon />
+            <AlternateEmailOutlinedIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, color: 'black', textAlign: 'center' }}
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignContent="center"
+            spacing={10}
+            sx={{ flexGrow: 1 }}
           >
-            News
-          </Typography>
-          <Button sx={{ color: 'black' }}>Login</Button>
+            <Typography variant="h6" sx={{ color: 'black' }}>
+              <HomeIcon />
+            </Typography>
+            <Typography variant="h6" sx={{ color: 'black' }}>
+              <SearchIcon />
+            </Typography>
+            <Typography variant="h6" sx={{ color: 'black' }}>
+              <EditCalendarIcon />
+            </Typography>
+            <Typography variant="h6" sx={{ color: 'black' }}>
+              <FavoriteBorderOutlinedIcon />
+            </Typography>
+            <Typography variant="h6" sx={{ color: 'black' }}>
+              <PersonOutlinedIcon />
+            </Typography>
+          </Stack>
+          <Button sx={{ color: 'black' }}>
+            <DragHandleOutlinedIcon />
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
