@@ -1,58 +1,39 @@
 'use client';
-import { useState } from 'react';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
-import { Group, Button, Image, Tabs, Grid } from '@mantine/core';
-import {
-  IconPhoto,
-  IconMessageCircle,
-  IconSettings,
-} from '@tabler/icons-react';
-import { Homepage } from './HomePage';
-
-export function Dashboard() {
-  const [activeTab, setActiveTab] = useState<string | null>('first');
-
+export const Dashboard = () => {
   return (
-    <Tabs value={activeTab} onChange={setActiveTab}>
-      <Tabs.List
-        grow
-        justify="center"
-        style={{ textAlign: 'center', marginBottom: 20 }}
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: 'white', boxShadow: 'unset' }}
       >
-        <Tabs.Tab
-          value="first"
-          leftSection={<IconPhoto style={{ width: 30 }} />}
-        />
-        <Tabs.Tab
-          value="second"
-          leftSection={<IconMessageCircle style={{ width: 30 }} />}
-        />
-        <Tabs.Tab
-          value="third"
-          leftSection={<IconSettings style={{ width: 30 }} />}
-        />
-        <Tabs.Tab
-          value="fourth"
-          leftSection={<IconPhoto style={{ width: 30 }} />}
-        />
-        <Tabs.Tab
-          value="fifth"
-          leftSection={<IconPhoto style={{ width: 30 }} />}
-        />
-      </Tabs.List>
-      <Tabs.Panel
-        value="first"
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        <Homepage />
-      </Tabs.Panel>
-      <Tabs.Panel value="second">Second panel</Tabs.Panel>
-      <Tabs.Panel value="third">Second panel</Tabs.Panel>
-
-      <Tabs.Panel value="fourth">Second panel</Tabs.Panel>
-      <Tabs.Panel value="fifth">Second panel</Tabs.Panel>
-    </Tabs>
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            aria-label="menu"
+            sx={{ mr: 2, color: 'black' }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, color: 'black', textAlign: 'center' }}
+          >
+            News
+          </Typography>
+          <Button sx={{ color: 'black' }}>Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
-}
+};
