@@ -1,5 +1,5 @@
 import { MantineProvider, createTheme } from '@mantine/core';
-import { Dashboard } from './Dashboard';
+import { Dashboard } from './pages/Dashboard';
 
 export default function App() {
   return (
